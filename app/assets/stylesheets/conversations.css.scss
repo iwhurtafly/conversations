@@ -1,0 +1,96 @@
+// Place all the styles related to the conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, 'Courier';
+	text-align:center;
+	background:#ffffff;
+	letter-spacing:0.1em;
+}
+
+#wrap {
+	width:1024px;
+	margin:0px auto;
+	padding:0px;
+	/*overflow:hidden;
+	zoom:1;*/
+	background:#ffffff;
+}
+
+#main {
+	width:814px;
+	float:left;
+	height:580px;
+	margin-right:10px;
+	padding:0px;
+	background:#ffffff;
+	overflow-y:scroll;
+}
+#main .howto {
+    color:#66cccc;
+	font-size:34px;
+}
+#main .username {
+    color:black;
+    font-size:34px;
+}
+#main .description {
+    text-align:left;
+    color:#66cccc;
+	font-size:12px;
+}
+#main .input {
+    font-size:0.7em;
+}
+#main .twitterprof {
+    color:black;
+    font-size:14px;
+}
+#main .twitter {
+	text-align:left;
+    color:black;
+    font-size:14px;
+    font: 1em/1.5em sans-serif;
+}
+#main .time {
+	text-align:left;
+	color:#66cccc;
+    font-size:12px;
+}
+
+#side {
+	width:200px;
+	float:right;
+	height:580px;
+	margin:0px;
+	padding:0px;
+	background:#66cccc;
+}
+
+#footer {
+	clear:both;
+	height:80px;
+	margin:0px;
+	padding:20px;
+	background:#999900;
+}
+#footer address {
+	font-size:12px;
+	font-style:normal;
+	text-align:center;
+	color:#800000;
+}
+#footer .contact {
+	font-size:12px;
+	font-style:normal;
+	text-align:center;
+	color:#800000;
+}

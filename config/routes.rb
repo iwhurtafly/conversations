@@ -1,4 +1,6 @@
-Conversations::Application.routes.draw do
+Conversations::Application.routes.draw do |map|
+  #takashi add 2012/02/05 |map|
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +57,9 @@ Conversations::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  map.connect 'conversations', :controller=>'conversations', :action=>'new'
+  map.connect 'conversations/find', :controller=>'conversations', :action=>'find'
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
+
 end

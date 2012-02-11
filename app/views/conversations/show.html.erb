@@ -1,0 +1,27 @@
+<% #if you can't find any conversations, this message is shown. %>
+<% if @conversations.length == 0 then %>
+  <% flash[:notice] = 'We couldn\'t find any conversation...Sorry!' %>
+<% else %>
+
+  <%= button_to 'Back',  :action => :new %>
+
+  <% @conversations.each_with_index do |conversation, i| %>
+    <% if (i % 2) == 0 %>
+      <p class="time"><b><%=h conversation[0] %></b></p>
+      <p class="twitter"><b><%=h conversation[1] %></b></p>
+      <p>--------------------------------------------------------------------------------------------------------------</p>
+
+    <% else %>
+      <p class="time"><b><%=h conversation[0] %></b></p>
+      <p class="twitter"><b><%=h conversation[1] %></b></p>
+
+	<p>--------------------------------------------------------------------------------------------------------------</p>
+
+	<% end %>
+  <% end %> 
+<% end %> 
+
+<br />
+<%= button_to 'Back',  :action => :new %>
+<br />
+

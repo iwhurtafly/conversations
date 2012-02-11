@@ -4,6 +4,7 @@ gem 'rails', '3.1.3'
 
 gem 'hashie', '1.0.0'
 gem 'twitter', '2.1.0'
+gem 'rails_legacy_mapper', '1.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
