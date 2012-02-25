@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
     begin
       user1 = Twitter.user(params[:search_string1])
       @user1 = Array.new
-      @user1.push(["#{user1['name']}"], ["#{user1['screen_name']}"], ["#{user1['location']}"], ["#{user1['description']}"], ["#{user1['url']}"])
+      @user1.push("#{user1['name']}", "#{user1['screen_name']}", "#{user1['location']}", "#{user1['description']}", "#{user1['url']}")
       @user1_img = Twitter.profile_image(params[:search_string1], :size => 'bigger')
     rescue Twitter::Error::NotFound
       flash[:notice] = 'We couldn\'t find that user1...'
@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
     begin
       user2 = Twitter.user(params[:search_string2])
       @user2 = Array.new
-      @user2.push(["#{user2['name']}"], ["#{user2['screen_name']}"], ["#{user2['location']}"], ["#{user2['description']}"], ["#{user2['url']}"])
+      @user2.push("#{user2['name']}", "#{user2['screen_name']}", "#{user2['location']}", "#{user2['description']}", "#{user2['url']}")
       @user2_img = Twitter.profile_image(params[:search_string2], :size => 'bigger')
     rescue Twitter::Error::NotFound
       flash[:notice] = 'We couldn\'t find that user2...'

@@ -4,24 +4,43 @@
 
   <%= form_tag "/conversations/find" do |f| %>
     
-	<p class="howto"><b>Enter UserName1&2 You Want to </br> Listen to a Conversation.</p>
-		<p class="description"><b>*This application is for Twitter users.</p>
+	<p class="howto"><b>◆Twitter上での会話を聞きたいですか？</p>	
+	<p class="description"><b>例えば、オバマ大統領とダライ・ラマ法王の会話を聞きたければ、
+		<br/>"BarackObama"と"DalaiLama"を入力し、Searchボタンを押します。</p>
 	<br/>
 	
-    <p class="username">UserName1
+	<p class="howto"><b>Do You Want to Listen to a Twitter Conversation?</p>
+	<p class="description"><b>For example, if you want to listen to a conversation 
+			between "Barack Obama" and "Dalai Lama",
+		</br>enter "BarackObama" and "DalaiLama" into UserName1&2 
+			and then push "Search" button.</p>
+			
+	<br/>
+		
+    <p class="username">UserName1@
     <%= text_field_tag :search_string1, nil, :class=>"input" %>
 	</p>
 		
-    <p class="username">UserName2
+    <p class="username">UserName2@
 	<%= text_field_tag :search_string2, nil, :class=>"input" %>
 	</p>
 
-    <br />
     <br />
 
 	<p align="center">
 	<%= submit_tag "Search"%>
 	</p>
+
+    <br />
+    <br />
+	<br />
+	
+	<p class="description2">
+		<%= image_tag("safari.png", :height => '23.25', :width => '56') %>
+		<%= image_tag("firefox.png", :height => '26', :width => '48.33') %>
+		recommended.
+	</p>
+	
 
   <% end %>
 
