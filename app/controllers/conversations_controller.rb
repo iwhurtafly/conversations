@@ -36,9 +36,11 @@ class ConversationsController < ApplicationController
     flash[:notice] = ""
     begin
       reply1 = Array.new
-      Twitter.user_timeline(params[:user1_screen_name], options = {:count=>"200", :page=>"1"}).each do |twitter|
+      #Twitter.user_timeline(params[:user1_screen_name], options = {:count=>"200", :page=>"1"}).each do |twitter|
+      Twitter.user_timeline(params[:search_string1], options = {:count=>"200", :page=>"1"}).each do |twitter|
         text = "#{twitter['text']}"
-        if text =~ /^@#{params[:user2_screen_name]}/
+        #if text =~ /^@#{params[:user2_screen_name]}/
+        if text =~ /^@#{params[:search_string2]}/
           reply1.push(["#{twitter['created_at']}", "#{twitter['text']}"])
         end
       end
@@ -48,9 +50,11 @@ class ConversationsController < ApplicationController
 
     begin    
       reply2 = Array.new
-      Twitter.user_timeline(params[:user2_screen_name], options = {:count=>"200", :page=>"1"}).each do |twitter|
+      #Twitter.user_timeline(params[:user2_screen_name], options = {:count=>"200", :page=>"1"}).each do |twitter|
+      Twitter.user_timeline(params[:search_string2], options = {:count=>"200", :page=>"1"}).each do |twitter|
         text = "#{twitter['text']}"
-        if text =~ /^@#{params[:user1_screen_name]}/
+        #if text =~ /^@#{params[:user1_screen_name]}/
+        if text =~ /^@#{params[:search_string1]}/
           reply2.push(["#{twitter['created_at']}", "#{twitter['text']}"])
         end
       end

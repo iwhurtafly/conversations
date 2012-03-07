@@ -1,10 +1,13 @@
+<% flash[:notice] = '' %>
 <% #if you can't find any user, this message is shown. %>
 <% if @user1.nil? then %>
   <% flash[:notice] = 'We couldn\'t find UserName1...Sorry!' %>
-  <%= button_to 'Back',  :action => :new %>
+  <%# button_to 'Back',  :action => :new %>
+  <%= link_to_function t("Back"), "history.back()" %>
 <% elsif @user2.nil? then %>
   <% flash[:notice] = 'We couldn\'t find UserName2...Sorry!' %>
-  <%= button_to 'Back',  :action => :new %>
+  <%# button_to 'Back',  :action => :new %>
+  <%= link_to_function t("Back"), "history.back()" %>
 <% else %>
 
   <p class="howto"><b>Confirmation ▼ 確定</b></p>
@@ -22,7 +25,8 @@
         <% if i == 1 %>
           <p class="twitterprof"><b>@</b><%= link_to user1, 
 			  "https://twitter.com/#!/" + user1, 'data-popup' => true %></p>
-		  <%= text_field_tag "user1_screen_name", user1, :hidden => true %>
+		  <%# text_field_tag "user1_screen_name", user1, :hidden => true %>
+		  <%= text_field_tag "search_string1", user1, :hidden => true %>
 	    <% elsif i == 4 %>
 	       <%= link_to user1, user1 %>
         <% else %>
@@ -39,7 +43,8 @@
         <% if i == 1 %>
           <p class="twitterprof"><b>@</b><%= link_to user2, 
 		      "https://twitter.com/#!/" + user2, 'data-popup' => true %></p>
-		  <%= text_field_tag "user2_screen_name", user2, :hidden => true %>
+		  <%# text_field_tag "user2_screen_name", user2, :hidden => true %>
+		  <%= text_field_tag "search_string2", user2, :hidden => true %>
         <% elsif i == 4 %>
            <%= link_to user2, user2 %>
         <% else %>
@@ -54,6 +59,7 @@
   </span>
 
   <br />
-  <%= button_to 'Back',  :action => :new %>
-
+  <%# button_to 'Back',  :action => :new %>
+  <%= link_to_function t("Back"), "history.back()" %>
+  
 <% end %>
