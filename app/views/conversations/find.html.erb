@@ -3,11 +3,11 @@
 <% if @user1.nil? then %>
   <% flash[:notice] = 'We couldn\'t find UserName1...Sorry!' %>
   <%# button_to 'Back',  :action => :new %>
-  <%= link_to_function t("Back"), "history.back()" %>
+  <%# link_to_function t("Back"), "history.back()" %>
 <% elsif @user2.nil? then %>
   <% flash[:notice] = 'We couldn\'t find UserName2...Sorry!' %>
   <%# button_to 'Back',  :action => :new %>
-  <%= link_to_function t("Back"), "history.back()" %>
+  <%# link_to_function t("Back"), "history.back()" %>
 <% else %>
 
   <% #<p class="howto"><b>Confirmation ▼ 確定</b></p> %>
