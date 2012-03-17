@@ -10,7 +10,7 @@
   <%= link_to_function t("Back"), "history.back()" %>
 <% else %>
 
-  <p class="howto"><b>Confirmation ▼ 確定</b></p>
+  <% #<p class="howto"><b>Confirmation ▼ 確定</b></p> %>
 
   <span style="text-align: left">
   <%= form_tag "/conversations/show" do |f| %>
@@ -25,7 +25,6 @@
         <% if i == 1 %>
           <p class="twitterprof"><b>@</b><%= link_to user1, 
 			  "https://twitter.com/#!/" + user1, 'data-popup' => true %></p>
-		  <%# text_field_tag "user1_screen_name", user1, :hidden => true %>
 		  <%= text_field_tag "search_string1", user1, :hidden => true %>
 	    <% elsif i == 4 %>
 	       <%= link_to user1, user1 %>
@@ -36,6 +35,9 @@
     <% @user1_img.each_line do |img1| %>
         <p><img src="<%=h img1 %>" /></p>
     <% end %>
+	<% @user1_recent_tweet.each_line do |r| %>
+		<p class="tweet"><b>Recent Tweet（最近のツイート）⇒ <%=h r %></b></p>
+    <% end %>
 
 <p>--------------------------------------------------------------------------------------------------------------</p>
 
@@ -43,7 +45,6 @@
         <% if i == 1 %>
           <p class="twitterprof"><b>@</b><%= link_to user2, 
 		      "https://twitter.com/#!/" + user2, 'data-popup' => true %></p>
-		  <%# text_field_tag "user2_screen_name", user2, :hidden => true %>
 		  <%= text_field_tag "search_string2", user2, :hidden => true %>
         <% elsif i == 4 %>
            <%= link_to user2, user2 %>
@@ -54,12 +55,18 @@
     <% @user2_img.each_line do |img2| %>
         <p><img src="<%=h img2 %>"/></p>
     <% end %> 
+	<% @user2_recent_tweet.each_line do |r| %>
+        <p class="tweet"><b>Recent Tweet（最近のツイート）⇒ <%=h r %></b></p>
+    <% end %>
 
   <% end %>
   </span>
 
   <br />
-  <%# button_to 'Back',  :action => :new %>
-  <%= link_to_function t("Back"), "history.back()" %>
-  
+
 <% end %>
+
+  <%= link_to_function t("Back"), "history.back()" %> 
+  <%# button_to 'Back',  :action => :new %>
+  <%# link_to "Back", "/conversations/new" %>
+  
