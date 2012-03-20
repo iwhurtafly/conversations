@@ -17,20 +17,21 @@ body {
 }
 
 #wrap {
-	width:1024px;
+	/*width:1024px;*/
+	height:580px;
 	margin:0px auto;
 	padding:0px;
-	/*overflow:hidden;
-	zoom:1;*/
+	overflow:hidden;
+	zoom:1;
 	background:#ffffff;
 }
 
 #main {
-	width:814px;
+	width:914px;
 	float:left;
 	height:580px;
 	margin-right:10px;
-	padding:0px;
+	padding-left:50px;
 	background:#ffffff;
 	overflow-y:scroll;
 }
@@ -77,8 +78,8 @@ body {
 }
 #main .time {
 	text-align:left;
-	color:#66cccc;
-    font-size:12px;
+	color:#CDB946;
+    font-size:14px;
 }
 
 #side {
@@ -88,6 +89,8 @@ body {
 	margin:0px;
 	padding:0px;
 	background:#66cccc;
+	border-left:thick;
+	border-left:solid;
 }
 
 #footer {
@@ -96,6 +99,8 @@ body {
 	margin:0px;
 	padding:20px;
 	background:#7D7864;
+	border-top:thick;
+	border-top:solid;
 }
 #footer address {
 	font-size:12px;

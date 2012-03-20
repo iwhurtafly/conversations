@@ -7,22 +7,17 @@
   <%# button_to 'Back',  :action => :new %>
   <%= link_to_function t("Back"), "history.back()" %>
 
+  <ul>
     <% @conversations.each_with_index do |conversation, i| %>
-      <% if (i % 2) == 0 %>
-        <p class="time"><b><%=h conversation[0] %></b></p>
-        <p class="twitter"><b><%=h conversation[1] %></b></p>
-      <p>--------------------------------------------------------------------------------------------------------------</p>
-
-      <% else %>
-        <p class="time"><b><%=h conversation[0] %></b></p>
-        <p class="twitter"><b><%=h conversation[1] %></b></p>
-
-	<p>--------------------------------------------------------------------------------------------------------------</p>
-
-	  <% end %>
+	  <li class="time"><b><%=h conversation[0] %></b>
+	  <br />
+	  <p class="twitter"><b><%=h conversation[1] %></b></p>
+ <p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      </li>
     <% end %> 
+  </ul>
   <% end %> 
   <br />
-  <%# button_to 'Back',  :action => :find %>
+  <%# button_to 'Back',  :action => :new %>
   <%= link_to_function t("Back"), "history.back()" %>
   <br />

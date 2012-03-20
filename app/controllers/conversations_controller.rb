@@ -44,8 +44,8 @@ class ConversationsController < ApplicationController
       16.times {
         i += 1
         Twitter.user_timeline(params[:search_string1], options = {:count=>"200", :page=> i}).each do |twitter|
-          text = "#{twitter['text']}"
-          if text =~ /^@#{params[:search_string2]}/
+          text = twitter['text']
+          if text =~ /^@#{params[:search_string2]}\s/
             reply1.push(["#{twitter['created_at']}", "#{twitter['text']}"])
           end
         end
@@ -62,8 +62,9 @@ class ConversationsController < ApplicationController
       16.times {
         i += 1
         Twitter.user_timeline(params[:search_string2], options = {:count=>"200", :page=> i}).each do |twitter|
-          text = "#{twitter['text']}"
-          if text =~ /^@#{params[:search_string1]}/
+          #text = "#{twitter['text']}"
+          text = twitter['text']
+          if text =~ /^@#{params[:search_string1]}\s/
             reply2.push(["#{twitter['created_at']}", "#{twitter['text']}"])
           end
         end
@@ -72,9 +73,10 @@ class ConversationsController < ApplicationController
       flash[:notice] = 'Maybe Twitter is down... Or check the name you input.'
     end
     
-    conversations = reply1 + reply2
+    #sometimes reply1 & reply2 return the same result. so, not [+] but [|] is preferable.
+    conversations = reply1 | reply2
     conversations.sort!
     @conversations = conversations
+    
   end
-
 end
