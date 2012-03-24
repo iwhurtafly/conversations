@@ -14,12 +14,13 @@
 
   <span style="text-align: left">
   <%= form_tag "/conversations/show" do |f| %>
+
+	<%= select_tag("how_many_tweets", options_for_select([["Most Recent ：最近の",1],["More Recent ：ちょっと前も",2],["Older ：かなり古いのも",3],["Oldest ：一番古いのも",4]])) %>
     
     <p align="center">    
       <%# submit_tag "Listen!" %>
       <%= image_submit_tag("listen.png")%>
     </p>
-
 
     <% @user1.each_with_index do |user1, i| %>
         <% if i == 1 %>

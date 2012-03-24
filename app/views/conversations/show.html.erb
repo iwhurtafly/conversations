@@ -6,8 +6,7 @@
 
   <%# button_to 'Back',  :action => :new %>
   <%= link_to_function t("Back"), "history.back()" %>
-
-  <ul>
+  <ol>
     <% @conversations.each_with_index do |conversation, i| %>
 	  <li class="time"><b><%=h conversation[0] %></b>
 	  <br />
@@ -15,7 +14,7 @@
  <p>------------------------------------------------------------------------------------------------------------------------------------------------------</p>
       </li>
     <% end %> 
-  </ul>
+  </ol>
   <% end %> 
   <br />
   <%# button_to 'Back',  :action => :new %>

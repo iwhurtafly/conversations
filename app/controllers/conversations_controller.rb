@@ -41,7 +41,8 @@ class ConversationsController < ApplicationController
       
       i = 0
       #3200Tweets are MAX.
-      16.times {
+      how_many_tweets = params[:how_many_tweets].to_i ** 2
+      how_many_tweets.times {
         i += 1
         Twitter.user_timeline(params[:search_string1], options = {:count=>"200", :page=> i}).each do |twitter|
           text = twitter['text']
@@ -59,7 +60,8 @@ class ConversationsController < ApplicationController
 
       i = 0
       #3200Tweets are MAX.
-      16.times {
+      how_many_tweets = params[:how_many_tweets].to_i ** 2
+      how_many_tweets.times {
         i += 1
         Twitter.user_timeline(params[:search_string2], options = {:count=>"200", :page=> i}).each do |twitter|
           #text = "#{twitter['text']}"
@@ -72,11 +74,13 @@ class ConversationsController < ApplicationController
     rescue Twitter::Error::BadGateway, Twitter::Error::BadRequest, Twitter::Error::EnhanceYourCalm, Twitter::Error::Forbidden, Twitter::Error::InternalServerError, Twitter::Error::NotAcceptable, Twitter::Error::NotFound, Twitter::Error::ServiceUnavailable, Twitter::Error::Unauthorized
       flash[:notice] = 'Maybe Twitter is down... Or check the name you input.'
     end
-    
+
     #sometimes reply1 & reply2 return the same result. so, not [+] but [|] is preferable.
     conversations = reply1 | reply2
+    conversations.uniq!
     conversations.sort!
     @conversations = conversations
+    #@how_many_tweets = how_many_tweets
     
   end
 end

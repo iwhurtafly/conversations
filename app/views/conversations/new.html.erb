@@ -13,8 +13,7 @@
 	<p class="description"><b>For example, if you want to listen to a conversation 
 			between "Barack Obama" and "Dalai Lama",
 		</br>enter "BarackObama" and "DalaiLama" into UserName1&2 
-			and then push "Search" button.</p>
-			
+			and then push "Search" button.</p>	
 	<br/>
 		
     <p class="username">UserName1@
@@ -29,19 +28,17 @@
 
 	<p align="center">
 	<%# submit_tag "Search"%>
-	<%= image_submit_tag("search.png")%>
+	<%= image_submit_tag("search.png", :id => "search_button") %>
 	</p>
 
     <br />
 
-	
 	<p class="description2">
 		<%= image_tag("safari.png", :height => '23.25', :width => '56') %>
 		<%= image_tag("firefox.png", :height => '26', :width => '48.33') %>
 		recommended.
 	</p>
 	
-
   <% end %>
 
 </span>
