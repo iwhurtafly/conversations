@@ -25,17 +25,22 @@
 <body>
 
 <div id="wrap">
+
   <div id="main">
 	<br />
     <p style="color: red"><%= flash[:notice] %></p>
     <%= yield %>
   </div>
 
+
+<!--
   <div id="side">
     <p class="menu_img">
     <%= image_tag("mimi.png", :height => '200', :width => '170') %>
     </p>
   </div>
+-->
+
 </div>
 
 <div id="footer">
