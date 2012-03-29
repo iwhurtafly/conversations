@@ -80,7 +80,6 @@ class ConversationsController < ApplicationController
     conversations.uniq!
     conversations.sort!
     @conversations = conversations
-    #@how_many_tweets = how_many_tweets
     
   end
 end
