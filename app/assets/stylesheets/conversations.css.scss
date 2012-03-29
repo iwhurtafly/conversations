@@ -30,7 +30,7 @@ body {
 	width:1024px;
 	float:left;
 	height:580px;
-	margin-right:10px;
+	/*margin-right:10px;*/
 	/*padding-top:30px;*/
 	padding-left:10px;
 	background:#ffffff;
@@ -50,7 +50,7 @@ body {
 	font-size:12px;
 }
 #main .description2 {
-    text-align:right;
+    text-align:left;
     color:black;
 	font-size:12px;
 }
@@ -96,9 +96,9 @@ body {
 
 #footer {
 	clear:both;
-	height:80px;
+	height:100px;
 	margin:0px;
-	padding:20px;
+	padding:10px;
 	background:#7D7864;
 	border-top:thick;
 	border-top:solid;
